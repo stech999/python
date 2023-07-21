@@ -10,7 +10,7 @@
 # -> 5
 
 list_1 = [1, 2, 3, 4, 5]
-k = 100
+k = 20
 storage = []
 for i in list_1:
     storage.append((abs(k - i), i))
