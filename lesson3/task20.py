@@ -189,7 +189,7 @@ en70 = "Q, Z"
 en7 = en70.lower()
 points7 = int(10)
 
-for i in range(len(en1)):     # and range(len(en2)): #, range(len(en3)):
+for i in range(len(en1)):
     for j in range(len(k)):
         if en1[i] == k[j]:
             sum += points
