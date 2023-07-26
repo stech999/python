@@ -8,8 +8,6 @@
 # 3 6 9 12 15 18
 # 6 12
 
-from random import randint
-
 num1 = int(input("Кол-во элементов первого множества: "))
 list1 = []
 for i in range(num1):
