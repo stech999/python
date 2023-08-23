@@ -22,7 +22,6 @@ def create_table():
     mail TEXT
 )""")
 
-
 def add_contact():
     name = input("Имя: ")
     phone = input("Номер телефона: ")
@@ -32,27 +31,42 @@ def add_contact():
     print("Контакт успешно сохранен.")
     con.commit()
 
-
 def del_contact():
     names = input("Введите имя для удаления контакта: ")
     sql = f"DELETE FROM contact WHERE name = '{names}'"
-    print("Контакт успешно удален.")
     con.execute(sql)
+    print("Контакт успешно удален.")
     con.commit()
+
+
+
+def search_contact():
+    search = input("Введите имя: ")
+    cur.execute(f"select * from contact where name = '{search}'")
+    for row in cur.fetchall():
+        print(row)
+        print(f"Контакт {search} найден.")
+        break
+    else:
+        print("Контакт не найден, попробуйте еще раз ввести имя верно.")
+        search_contact()
+
 
 def show_data():  # показываем все записи таблицы users
     cur.execute("select * from contact")
     for row in cur.fetchall():
         print(row)
+    print('Контакты успешно выгруженны!')
 
 create_table()
 
 while True:
     print("1. Добавить контакт.\n"
           "2. Удалить контакт.\n"
-          "3. Показать все контакты.")
+          "3. Показать все контакты.\n"
+          "4. Найти контакт.")
 
-    command = input("Введите номер команды: ")
+    command = int(input("Введите номер команды: "))
     if command == 1:
         add_contact()
         break
@@ -61,6 +75,9 @@ while True:
         break
     elif command == 3:
         show_data()
+        break
+    elif command == 4:
+        search_contact()
         break
     else:
         print("Вы ввели не существующий номер команды. ")
