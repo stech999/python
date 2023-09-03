@@ -7,7 +7,7 @@ ticket = []
 tic_win = []
 ticket_coin = []
 
-API_TOKEN='yuor token'
+API_TOKEN='token key'
 bot = telebot.TeleBot(API_TOKEN)
 
 @bot.message_handler(commands=['start'])
@@ -53,40 +53,47 @@ def bilet(message):
         bot.send_message(message.chat.id, "Желаете сыграть еще раз? Тогда нажмите кнопку | Играть | \U0001F603")
         ticket.clear()
         tic_win.clear()
+        ticket_coin.clear()
     elif count == 1:
         bot.send_message(message.chat.id, f"Совпало всего 1 номер \U0001F626 {ticket_coin}")
         bot.send_message(message.chat.id, "Удача улыбнется вам в следующий раз \U0001F62D")
         bot.send_message(message.chat.id, "Желаете сыграть еще раз? Тогда нажмите кнопку | Играть | \U0001F603")
         ticket.clear()
         tic_win.clear()
+        ticket_coin.clear()
     elif count == 2:
         bot.send_message(message.chat.id, f"Совпало 2 номера: {ticket_coin}")
         bot.send_message(message.chat.id, "Вы выиграли! 1 000$ \U0001F4B0")
         bot.send_message(message.chat.id, "Желаете сыграть еще раз? Тогда нажмите кнопку | Играть | \U0001F603")
         ticket.clear()
         tic_win.clear()
+        ticket_coin.clear()
     elif count == 3:
         bot.send_message(message.chat.id, f"Совпало 3 номера: {ticket_coin}")
         bot.send_message(message.chat.id, "Вы выиграли! 10 000$ \U0001F4B0")
         bot.send_message(message.chat.id, "Желаете сыграть еще раз? Тогда нажмите кнопку | Играть | \U0001F603")
         ticket.clear()
         tic_win.clear()
+        ticket_coin.clear()
     elif count == 4:
         bot.send_message(message.chat.id, f"Совпало 4 номера: {ticket_coin}")
         bot.send_message(message.chat.id, "Вы выиграли! 100 000$ \U0001F4B0")
         bot.send_message(message.chat.id, "Желаете сыграть еще раз? Тогда нажмите кнопку | Играть | \U0001F603")
         ticket.clear()
         tic_win.clear()
+        ticket_coin.clear()
     elif count == 5:
         bot.send_message(message.chat.id, f"Совпало 5 номеров: {ticket_coin}")
         bot.send_message(message.chat.id, "Вы везунчик, Вы выиграли! 1 000 000$ \U0001F4B0")
         bot.send_message(message.chat.id, "Желаете сыграть еще раз? Тогда нажмите кнопку | Играть | \U0001F603")
         ticket.clear()
         tic_win.clear()
+        ticket_coin.clear()
     else:
         bot.send_message(message.chat.id, "Ошибка в системе! \U0001F632")
         ticket.clear()
         tic_win.clear()
+        ticket_coin.clear()
 
 
 def random_digit(): #создание уникальных номеров для пользователя
