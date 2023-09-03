@@ -8,7 +8,7 @@ ticket = []
 tic_win = []
 ticket_coin = []
 
-API_TOKEN = '6376153740:AAGxkXuoLcpNZCKYXEVodzcnM45SiCuoIb0'
+API_TOKEN = 'token'
 bot = telebot.TeleBot(API_TOKEN)
 
 
